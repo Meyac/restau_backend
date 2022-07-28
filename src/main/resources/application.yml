@@ -10,28 +10,3 @@ server:
     include-message: always
     whitelabel:
       enabled: false
-
-spring:
-  flyway:
-    enabled: true
-    locations: classpath:sql/migration
-    baselineOnMigrate: true
-    baselineVersion: 0.0.1
-    clean-disabled: false
-  datasource:
-    url: jdbc:mariadb://localhost:3306/spring_example?useSSL=false&serverTimezone=UTC
-    username: spring_example
-    password: spring_example
-    driver-class-name: org.mariadb.jdbc.Driver
-    # important for the data.sql file
-    initialization-mode: never
-
-  jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MariaDB103Dialect
-
-    # Hibernate ddl auto (create, create-drop, validate, update)
-    hibernate:
-      ddl-auto: validate
-    open-in-view: false
